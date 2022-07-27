@@ -7,17 +7,19 @@
 import json
 from pprint import pprint
 
+import pytest as pytest
+
 from tools.ymlController import get_yaml_data
 from libs.login import Login
-#1、拿数据(所有数据)
-loginData = get_yaml_data("../data/loginData.yml")
-#2、执行接口,获取响应数据
-result = Login.login(loginData[0]);
-print(result)
-print(loginData[0]['resp']['success'])
-#3、断言
-if result['success'] == loginData[0]['resp']['success']:
-    print("请求成功")
+# #1、拿数据(所有数据)
+# loginData = get_yaml_data("../data/loginData.yml")
+# #2、执行接口,获取响应数据
+# result = Login.login(loginData[0]);
+# print(result)
+# print(loginData[0]['resp']['success'])
+# #3、断言
+# if result['success'] == loginData[0]['resp']['success']:
+#     print("请求成功")
 
 
 '''
@@ -25,7 +27,42 @@ if result['success'] == loginData[0]['resp']['success']:
 结果用allure+log
 持续集成 jenkins + gitlab
 项目部署 docker
-
 '''
+# pytest 框架自动化测试 测试规则
+'''
+    1、py测试文件必须以test_ 开头（或_test结尾）
+    2、测试类必须以Test开头，并且不能有init方法
+    3、测试方法必须以test开头
+    4、断言必须使用assert
+    PASSED 通过
+    FAILED 用例失败
+    
+    老版本 . 成功 F 用例失败 E error 失败
+    
+'''
+'''
+需求：有多个用例自动执行
+方案：数据驱动---读取用例数据---给框架执行
+        1、用例的请求数据 
+        2、用例的请求期望结果
+'''
+# 登陆接口封装类
+class TestLogin:
+    # 数据驱动的方法
+   # @pytest.mark.parametrize('a,b',[(1,2)])
+    @pytest.mark.parametrize('inData',get_yaml_data('../data/loginData.yml'))
+    def test_login(self,inData):
+        #print(inData)
+        # 调用业务代码
+        result =  Login.login(inData)
+        assert result['success'] == inData['resp']['success']
+
+
+if __name__ == '__main__':
+    pytest.main(['test_login.py','-s'])
+
+
+
+
 
 

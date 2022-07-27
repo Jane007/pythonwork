@@ -33,6 +33,6 @@ if __name__ == '__main__':
     # content['sessionId']=data[0]['sessionId']
     # content['id'] = data[0]['id']
     # data = json.dumps(data)
-    # print(data)
+    print(data)
     res = Login.login(inData=data[0])
     print(res)
