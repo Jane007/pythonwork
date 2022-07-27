@@ -4,13 +4,12 @@
 # @Time    : 2022/7/27 10:46
 # @Software : Pycharm
 # @Description :
-import json
-from pprint import pprint
-
+import allure,os
 import pytest as pytest
 
-from tools.ymlController import get_yaml_data
 from libs.login import Login
+from tools.ymlController import get_yaml_data
+
 # #1、拿数据(所有数据)
 # loginData = get_yaml_data("../data/loginData.yml")
 # #2、执行接口,获取响应数据
@@ -55,14 +54,29 @@ class TestLogin:
         #print(inData)
         # 调用业务代码
         result =  Login.login(inData)
-        assert result['success'] == inData['resp']['success']
+        assert result['code'] == inData['resp']['code']
 
 
 if __name__ == '__main__':
-    pytest.main(['test_login.py','-s'])
+    pytest.main(['test_login.py','-s','--alluredir','../report/tmp'])
+    os.system("allure serve ../report/tmp")
+'''
+python + allure 执行测试
+1、先下载allure.zip 
+2、解压文件，配置bin文件到path
+3、pip install alluer-pytest
+4、验证
+
+allurer 报告方案原理
+    1、生成报告所需的文件
+    2、使用一些工具打开可视化报告
+'''
 
 
 
 
-
-
+@pytest.fixture(scope="session",autouse=True)
+def start_running():
+    print("马上开始执行自动化测试")
+    yield
+    print("自动化测试开始处理垃圾")

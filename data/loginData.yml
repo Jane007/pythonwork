@@ -7,8 +7,9 @@
     clientType: "jianshang"
     loginIp: "true"
   id: "bad30178-5f65-4210-a890-cf47f3aae021"
-  sessionId: "e536b04f-897f-48d8-998a-3bea8c93622b"
+  sessionId: "df866754-3fde-437d-a54a-0cfa4c4ca0fd"
   resp:
+    code: 200
     success: true
     message: "登录成功！"
 
@@ -21,7 +22,8 @@
     clientType: "jianshang"
     loginIp: "true"
   id: "bad30178-5f65-4210-a890-cf47f3aae021"
-  sessionId: "e536b04f-897f-48d8-998a-3bea8c93622b"
+  sessionId: "df866754-3fde-437d-a54a-0cfa4c4ca0fd"
   resp:
+    code: 5515
     success: false
     message: "密码错误"
