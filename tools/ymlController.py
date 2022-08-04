@@ -15,6 +15,14 @@ def get_yaml_data(fileDir):
     return result
 
 if __name__ == '__main__':
-    fo = get_yaml_data("../data/loginData.yml")
-    print(fo)
+    # fo = get_yaml_data("../data/loginData.yml")
+    # print(fo)
+    x = input("请输入你想要进入的环境")
+    if x == "dev":
+        print("进入了开发环境")
+    elif x == "test":
+        print("恭喜进入了测试环境")
+    else:
+        print("恭喜进入了正式环境")
 
+    input("\n\n按下 enter 键后退出。")
