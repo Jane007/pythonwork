@@ -6,9 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>809</width>
+    <height>587</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>1</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -16,78 +21,144 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>190</y>
-     <width>81</width>
-     <height>31</height>
+     <x>80</x>
+     <y>210</y>
+     <width>91</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>提交</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QLineEdit" name="username">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>190</y>
-     <width>91</width>
-     <height>31</height>
+     <y>60</y>
+     <width>201</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="password">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>130</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>40</y>
+     <width>71</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>用户名：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>120</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>密  码：</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="cacel">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>210</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>取消</string>
    </property>
   </widget>
-  <widget class="QWidget" name="formLayoutWidget">
+  <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>50</y>
-     <width>161</width>
-     <height>41</height>
+     <x>480</x>
+     <y>70</y>
+     <width>271</width>
+     <height>191</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="Label">
-      <property name="text">
-       <string>用户名</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="userName">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="formLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>100</y>
-     <width>160</width>
-     <height>51</height>
-    </rect>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>15</pointsize>
+    </font>
    </property>
-   <layout class="QFormLayout" name="formLayout_2">
-    <item row="0" column="0">
-     <widget class="QLabel" name="Label_2">
-      <property name="text">
-       <string>密码</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="password"/>
-    </item>
-   </layout>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>cacel</sender>
+   <signal>clicked()</signal>
+   <receiver>textBrowser</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>615</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -9,7 +9,7 @@ import pytest as pytest
 
 from libs.login import Login
 from tools.ymlController import get_yaml_data
-
+from vip.homework import getSalary
 # #1、拿数据(所有数据)
 # loginData = get_yaml_data("../data/loginData.yml")
 # #2、执行接口,获取响应数据
