@@ -5,12 +5,16 @@
 # @Description :
 import json
 
+import pytest
+
 from config.config import HOST
 from tools.ymlController import get_yaml_data
 import requests
 # 封装一个登陆的类
 class Login:
-    def login(inData):#登陆的方法
+    def __init__(self,url):
+        self.url = url
+    def login(inData,getSession=False):#登陆的方法
         # url 路径
         url=f'{HOST}/application/submit'
         # 参数
@@ -23,7 +27,16 @@ class Login:
         payload=inData
         # 请求
         req = requests.post(url,json=payload)
+        if getSession:
+            return req.json()['sessionId']
         return req.json()
+
+    def login_online(self,inData):
+        payload = inData
+        req = requests.post(self.url, json=payload)
+        token = 'Bearer {}'.format(req.json()['token'])
+        return token
+
 
 # 快捷键 ctrl+j
 

@@ -5,3 +5,5 @@
 # @Software : Pycharm
 # @Description :
 HOST="http://192.168.100.11:8987"
+
+ONLINE="https://app-api.xw18.cn"

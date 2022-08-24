@@ -4,7 +4,8 @@
 # @Time    : 2022/7/27 10:46
 # @Software : Pycharm
 # @Description :
-import allure,os
+import allure
+import os
 import pytest as pytest
 
 from libs.login import Login
@@ -35,34 +36,42 @@ from vip.homework import getSalary
     4、断言必须使用assert
     PASSED 通过
     FAILED 用例失败
-    
+
     老版本 . 成功 F 用例失败 E error 失败
-    
+
 '''
 '''
 需求：有多个用例自动执行
 方案：数据驱动---读取用例数据---给框架执行
-        1、用例的请求数据 
+        1、用例的请求数据
         2、用例的请求期望结果
 '''
 # 登陆接口封装类
+
+
 class TestLogin:
     # 数据驱动的方法
    # @pytest.mark.parametrize('a,b',[(1,2)])
-    @pytest.mark.parametrize('inData',get_yaml_data('../data/loginData.yml'))
-    def test_login(self,inData):
-        #print(inData)
+    @pytest.mark.skip(reason="不想跑这个")
+    @pytest.mark.parametrize('inData', get_yaml_data('../data/loginData.yml'))
+    def test_login(self, inData):
+        # print(inData)
         # 调用业务代码
-        result =  Login.login(inData)
+        result = Login.login(inData)
         assert result['code'] == inData['resp']['code']
+
+    def test_login_online(self,login_init):
+        result = login_init
+        print(result)
+        assert 1==1
 
 
 if __name__ == '__main__':
-    pytest.main(['test_login.py','-s','--alluredir','../report/tmp'])
+    pytest.main(['test_login.py', '-s', '--alluredir', '../report/tmp'])
     os.system("allure serve ../report/tmp")
 '''
 python + allure 执行测试
-1、先下载allure.zip 
+1、先下载allure.zip
 2、解压文件，配置bin文件到path
 3、pip install alluer-pytest
 4、验证
@@ -73,9 +82,7 @@ allurer 报告方案原理
 '''
 
 
-
-
-@pytest.fixture(scope="session",autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def start_running():
     print("马上开始执行自动化测试")
     yield
