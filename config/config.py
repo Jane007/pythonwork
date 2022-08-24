@@ -7,3 +7,5 @@
 HOST="http://192.168.100.11:8987"
 
 ONLINE="https://app-api.xw18.cn"
+
+TEST = "http://192.168.1.212:8987"

@@ -7,10 +7,12 @@
 import pytest
 
 # 自动化执行前的一个环境初始化操作
-from config.config import HOST, ONLINE
+from config.config import HOST, ONLINE,TEST
 from libs.login import Login
 from libs.project import Project
 
+
+URL = TEST
 
 @pytest.fixture(scope="session",autouse=True)
 def start_running():
@@ -51,15 +53,23 @@ def my_fixture_id(request):
 
 @pytest.fixture(scope='class')
 def login_init():
-    url=f'{ONLINE}/user/login'
+    url=f'{URL}/user/login'
     token = Login(url).login_online({'mobile': '18926078113', 'password': 'test2022'})
     return token
 
 @pytest.fixture(scope='class')
 def project_init(login_init):
-    url =f'{ONLINE}/element/projects'
+    url =f'{URL}/element/projects'
     projectObject = Project(login_init,url)
     return projectObject
+
+@pytest.fixture(scope='function')
+def project_update_init(project_init):
+    url = f'{URL}/element/project/350'
+    # 上传文件
+    return url,project_init
+
+
 
 
 

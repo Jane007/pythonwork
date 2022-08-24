@@ -135,7 +135,7 @@ def get_excel_data(excelDir, sheetName, caseName, *args,runCase=['all']):  # arg
 
 if __name__ == '__main__':#在里面写的代码，其他模块Import  不会运行里面的代码
     res = get_excel_data('../data/inData.xlsx', '项目列表',
-                         'project', '请求参数',runCase=['all'])
+                                                              'update', '请求参数', runCase=['all'])
     #print(res)
     for one in res:
         print(one)
