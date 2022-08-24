@@ -60,6 +60,7 @@ class TestLogin:
         result = Login.login(inData)
         assert result['code'] == inData['resp']['code']
 
+    @pytest.mark.login
     def test_login_online(self,login_init):
         result = login_init
         print(result)
