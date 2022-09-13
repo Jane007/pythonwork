@@ -1,0 +1,8 @@
+保利商城
+包名：uni.UNI7D57679
+activity类名：io.dcloud.PandoraEntry
+
+
+咸鱼
+"appPackage": "com.taobao.idlefish",
+"appActivity": "com.taobao.fleamarket.home.activity.MainActivity",

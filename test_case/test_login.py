@@ -10,6 +10,7 @@ import pytest as pytest
 
 from libs.login import Login
 from tools.ymlController import get_yaml_data
+from config.config import project_path
 from vip.homework import getSalary
 # #1、拿数据(所有数据)
 # loginData = get_yaml_data("../data/loginData.yml")
@@ -52,8 +53,8 @@ from vip.homework import getSalary
 class TestLogin:
     # 数据驱动的方法
    # @pytest.mark.parametrize('a,b',[(1,2)])
-    @pytest.mark.skip(reason="不想跑这个")
-    @pytest.mark.parametrize('inData', get_yaml_data('../data/loginData.yml'))
+   # @pytest.mark.skip(reason="不想跑这个")
+    @pytest.mark.parametrize('inData', get_yaml_data(project_path+'/data/loginData.yml'))
     def test_login(self, inData):
         # print(inData)
         # 调用业务代码
