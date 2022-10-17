@@ -1,0 +1,22 @@
+# 字典
+#name: tom
+#age: 18
+
+#- 列表 用- 表示列表
+#- zhangjing
+#- tom
+#- Jane
+#- lisa
+
+# 字典里面有列表
+#info:
+#  - name: zhang
+#    age: 18
+#  - name: Jane
+#    age: 15
+
+# 列表里有字典
+- name: zhang
+  age: 18
+- name: jing
+  age: 15

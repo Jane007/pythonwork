@@ -1,0 +1,4 @@
+在 appium 中 我们没法使用css
+
+我们做app自动化，底层的测试驱动是不识别xpath的
+    appium 负责解析xpath

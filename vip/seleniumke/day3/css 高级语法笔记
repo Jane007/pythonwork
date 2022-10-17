@@ -1,0 +1,15 @@
+1、推荐的元素定位优先级
+    优先级最高：ID
+    优先级其次：name
+    优先级再次：css 表达式  --》css selector
+    优先级更次：xpath
+
+2、css 与 xpath
+    1、css 配合html，xpath 是配合 xml 工作的，两者在设计上，css 性能更优秀
+    2、css 语法相对更简洁
+    3、前端主要用的是 css
+    xpath 也有其优点
+        xpath可以根据文本定位
+        xpath 可以根据子节点定位父节点
+
+3、css规则：选择器   一条或多条声明

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>http 测试</title>
+    <style>
+        h1{
+            color:green
+        }
+        h2{
+            color:red
+        }
+    </style>
+</head>
+<body>
+        {% if score >=60 %}
+        <h1>恭喜{{score}}，pass</h1>
+        {% else %}
+        <h2>不好意思{{score}}，faild</h2>
+        {% endif %}
+
+
+
+</body>
+</html>

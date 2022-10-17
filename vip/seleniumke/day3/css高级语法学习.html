@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*css 当中，id选择器以 # 来定义*/
+        #abc {
+            color: red
+        }
+
+        /*class 选择器，以 . 来定义*/
+        .l132 {
+            color: blue
+        }
+
+        /*标签选择器，也就是tag_name*/
+        /*分组选择器，选中一组HTML，以 , 来定义*/
+        p, a {
+            background: yellow
+        }
+
+        /*属性选择器，选取具有特定属性的html元素*/
+        [title="ab1"] {
+            color: green;
+        }
+
+        /*属性选择器，可以不为属性指定值*/
+        /*属性选择器，可以指定标签类型*/
+        p[class] {
+            font-size: 20px;
+        }
+
+        /*组合选择符********************************/
+
+        /*后代选择器，以空格分隔，类似于xpath中的//*/
+        /*以下选中 id 为 ab2 的元素之下的所有 p 标签，不论层级有多深*/
+        #ab2 p {
+            background: aliceblue;
+        }
+
+        /*子元素选择器，以大于号分隔，类似于xpath中的/*/
+        /*以下选择 id 为 ab2 的元素之下的 span 标签，要求是直接子元素才可以*/
+        #ab2 > span {
+            color: chocolate;
+        }
+
+        /*相邻兄弟选择器，以加号定义，选择紧挨在某元素之后的另一元素*/
+        [title="qlmn"] + li {
+            color: green
+        }
+
+        /*后续兄弟选择器，以波浪线定义，选择指定元素之后的所有元素*/
+        [title="qlmn"] ~ li{
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+<p id="abc" class="l123">浔阳江头夜送客，枫叶荻花秋瑟瑟</p>
+<p id="abd">主人下马客在船，举酒欲饮无管弦</p>
+<p class="l132">醉不成欢惨将别，别时茫茫江浸月</p>
+<p class="l132">忽闻水上琵琶声，主人忘归客不发</p>
+<a class="l132">寻声暗问弹者谁？琵琶声停欲语迟。</a>
+<br>
+<p title="ab1">移船相近邀相见，添酒回灯重开宴。</p>
+<div id="ab2">
+    <div>
+        <div>
+            <p>千呼万唤始出来，犹抱琵琶半遮面。</p>
+        </div>
+    </div>
+    <span>转轴拨弦三两声，未成曲调先有情。</span>
+    <div>
+        <span>弦弦掩抑声声思，似诉平生不得志。</span>
+    </div>
+</div>
+<ul>
+    <li>低眉信手续续弹，说尽心中无限事。</li>
+    <li title="qlmn">轻拢慢捻抹复挑，初为霓裳后六么</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <div>
+        <li>666</li>
+    </div>
+</ul>
+</body>
+</html>

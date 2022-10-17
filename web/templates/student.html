@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Flask HTTP请求方法处理</title>
+</head>
+   <body>
+<!--      <form action = "http://localhost:5000/result-->
+<!--" method = "post">-->
+<!--         <p>输入姓名:<input type = "text" name = "name" value=""/></p>-->
+<!--         <p>物理分数: <input type = "text" name = "Physics" /></p>-->
+<!--         <p>化学分数: <input type = "text" name = "Chemistry" /></p>-->
+<!--         <p>数学分数: <input type ="text" name = "Mathematics" /></p>-->
+<!--         <p><input type = "submit" value = "提交" /></p>-->
+<!--      </form>-->
+<!--       <h2>{{name}}</h2>-->
+
+    <form action = "{{ url_for('addrec') }}" method = "POST">
+         <h3>学生信息</h3>
+         姓名
+         <input type = "text" name = "nm" /><br/>
+
+         地址
+        <textarea name = "add" >aaaa</textarea>
+         <br/>
+         城市
+         <input type = "text" name = "city" /><br/>
+
+         邮编
+         <input type = "text" name = "pin" /><br/>
+         <input type = "submit" value = "提交" /><br/>
+      </form>
+   </body>
+</html>
+

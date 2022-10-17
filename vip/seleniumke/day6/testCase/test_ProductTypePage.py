@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 
-from pages.prodtctTypePage import ProductTypePageActionObj
+from prodtctTypePage import ProductTypePageActionObj
 import time
 
 

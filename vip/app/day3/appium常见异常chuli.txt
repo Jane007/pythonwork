@@ -1,0 +1,38 @@
+
+1、appium服务未启动
+    报错：目标计算机积极拒绝
+    解决：启动 appium之后，等待  Welcome to Appium 出现以后再去运行脚本
+
+
+2、会话冲突
+    报错：Faild to start an appium session
+    解决：重启 appium 服务
+
+3、每次运行脚本都要安装 ui2
+    配置字典加上 'skipServerInstallation':True
+
+4、运行代码提示找不到 adb
+    报错：could not find adb.exe
+    解决：检查adb 环境，appium中没有指定adb的路径
+
+5、程序无法打开 appium settings
+
+
+6、设备未连接
+    报错：could not find a connected Android device
+    解决：开发者模式usb调试，数据线是不是连稳了
+           配置字典里边的 plathformVersion 和 deviceName
+
+7、launchable activity 值写错
+    报错：activity used to start app doesn't exits or can not be launched
+    AndroidMainfest.xml 中的 activity 属性设置为 exported=false,则appium无法操作
+
+8、writing to settings
+    小米或OPPO会出现
+        小米：插入sim卡，usb调试(安全设置要打开)-打开
+    OPPO：开启  禁止权限监控
+
+9、appium the permission to start
+    appium 打开页面失败
+    AndroidMainfest.xml
+    android:exported='true'
